@@ -7,15 +7,15 @@ from PIL import Image, ImageTk
 
 # Nombres de los minerales
 rock_names = [
-    "Talco", "Cuarzo", "Feldespato - Ortosa", "Mica - Biotita", "Yeso", "Calcita"
-    "Halita", "Grafito", "Pirita", "Galena", "Magnetita", "Silvina", "Azufre"
+    "Talco", "Cuarzo", "Feldespato - Ortosa", "Mica - Biotita", "Yeso", "Calcita",
+    "Halita", "Grafito", "Pirita", "Galena", "Magnetita", "Silvina", "Azufre",
     "Cinabrio", "Azurita", "Sílex ", "Fluorita", "Limonita", "Olivino", "Aragonito"
 ]
 
 # Respuestas correctas para cada mineral (en orden)
 correct_answers = [
-    "Talco", "Cuarzo", "Feldespato - Ortosa", "Mica - Biotita", "Yeso", "Calcita"
-    "Halita", "Grafito", "Pirita", "Galena", "Magnetita", "Silvina", "Azufre"
+    "Talco", "Cuarzo", "Feldespato - Ortosa", "Mica - Biotita", "Yeso", "Calcita",
+    "Halita", "Grafito", "Pirita", "Galena", "Magnetita", "Silvina", "Azufre",
     "Cinabrio", "Azurita", "Sílex ", "Fluorita", "Limonita", "Olivino", "Aragonito"
 ]
 
