@@ -9,14 +9,14 @@ from PIL import Image, ImageTk
 rock_names = [
     "Talco", "Cuarzo", "Feldespato - Ortosa", "Mica - Biotita", "Yeso", "Calcita",
     "Halita", "Grafito", "Pirita", "Galena", "Magnetita", "Silvina", "Azufre",
-    "Cinabrio", "Azurita", "Sílex ", "Fluorita", "Limonita", "Olivino", "Aragonito"
+    "Cinabrio", "Azurita", "Sílex", "Fluorita", "Limonita", "Olivino", "Aragonito"
 ]
 
 # Respuestas correctas para cada mineral (en orden)
 correct_answers = [
     "Talco", "Cuarzo", "Feldespato - Ortosa", "Mica - Biotita", "Yeso", "Calcita",
     "Halita", "Grafito", "Pirita", "Galena", "Magnetita", "Silvina", "Azufre",
-    "Cinabrio", "Azurita", "Sílex ", "Fluorita", "Limonita", "Olivino", "Aragonito"
+    "Cinabrio", "Azurita", "Sílex", "Fluorita", "Limonita", "Olivino", "Aragonito"
 ]
 
 # Crear la ventana principal
@@ -43,6 +43,7 @@ right_frame.pack(side=tk.LEFT, padx=10)
 
 # Crear etiquetas y entradas por cada mineral
 entries = []
+labels = []
 for i in range(20):
     frame = tk.Frame(right_frame)
     frame.pack(padx=10, pady=5)
@@ -59,8 +60,13 @@ for i in range(20):
 def check_answers():
     correct = 0
     for i, entry in enumerate(entries):
-        if entry.get().strip().lower() == correct_answers[i].lower():
+        user_answer = entry.get().strip().lower()
+        correct_answer = correct_answers[i].lower()
+        if user_answer == correct_answer:
+            entry.config(bg="lightgreen")
             correct += 1
+        else:
+            entry.config(bg="lightcoral")
     messagebox.showinfo("Resultados", f"Has identificado correctamente {correct} de 20 minerales.")
 
 # Botón para verificar respuestas
