@@ -41,24 +41,30 @@ right_frame.pack(side=tk.LEFT, padx=10)
 
 # Crear etiquetas y entradas para cada roca
 entries = []
+labels = []
 for i in range(11):
     frame = tk.Frame(right_frame)
     frame.pack(padx=10, pady=5)
 
     label = tk.Label(frame, text=f"Roca {i + 1}")
     label.pack(side=tk.LEFT)
+    labels.append(label)
 
     entry = tk.Entry(frame)
     entry.pack(side=tk.LEFT)
     entries.append(entry)
 
-
 # Función para verificar las respuestas
 def check_answers():
     correct = 0
     for i, entry in enumerate(entries):
-        if entry.get().strip().lower() == correct_answers[i].lower():
+        user_answer = entry.get().strip().lower()
+        correct_answer = correct_answers[i].lower()
+        if user_answer == correct_answer:
+            entry.config(bg="lightgreen")
             correct += 1
+        else:
+            entry.config(bg="lightcoral")
     messagebox.showinfo("Resultados", f"Has identificado correctamente {correct} de 11 rocas.")
 
 # Botón para verificar respuestas
